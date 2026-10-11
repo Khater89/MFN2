@@ -19,6 +19,10 @@ The development server listens on port 8000. Register a patient, doctor, nurse, 
 
 There are **no default passwords**. Sample provider accounts have unusable passwords; demo listings are clearly labeled and offer no real clinical services. Do not use real patient information in this development app. To start with an empty marketplace, omit `--demo` on a fresh database. `seed_demo` adds sample providers, products, and the next seven days of appointments without replacing existing records, stock, or commission settings.
 
+## Railway
+
+See [Railway deployment instructions](docs/railway.md). The repository now includes Gunicorn, WhiteNoise, and a cloud startup command that migrates the database, collects static assets, and binds to Railway’s `PORT`. Configure a secure `DJANGO_SECRET_KEY` and persistent volume in Railway before using the public service.
+
 ## Implemented
 
 - Search and category/city filters, empty states, licensed profile surfaces.

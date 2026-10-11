@@ -13,3 +13,7 @@ Validated in the cloud development instance with Python 3.12.14, Django 5.2.18, 
 **Unrun / unavailable:** paid checkout, financial webhook verification, commission accrual, payouts, SMS/email delivery, courier dispatch, and real license-authority validation. No fake integrations replaced these checks. No production deployment or environment publication was performed. Cancellation/refund policy, gateway, and business/legal operations remain launch prerequisites.
 
 Saved environment draft fields: `install_script` and `start_skill`. Saving the draft does not apply or publish it. Review and save the changes in environment settings, then publish to snapshot the prepared files. Restoration in a new cloud task has not been independently tested.
+
+## Railway startup fix — 11 October 2026
+
+Diagnosed the supplied Deploy Logs: migrations completed, then `/bin/bash: gunicorn: command not found` caused repeated container exits. Added pinned Gunicorn 26.2.0 and WhiteNoise 6.12.0, Railway config, host/origin integration, optional volume-based data paths, and `scripts/start-cloud.sh`. A real local Gunicorn smoke run with DEBUG off, a temporary generated secret, simulated Railway public hostname/HTTPS forwarding, and an isolated volume returned HTTP 200 for the marketplace, CSS, and JavaScript. All 19 existing functional tests passed afterward. No real Railway deployment success has been verified; the user must supply the secret through service Variables and rebuild.
